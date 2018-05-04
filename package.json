@@ -1,0 +1,23 @@
+{
+  "name": "miscatchan",
+  "version": "1.0.0",
+  "description": "Official bot for MiscatSquad's Discord server. Made by Seii. Has basic administration and moderation functions, as well as other fun and interactive commands.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "miscat",
+    "chan",
+    "miscatsquad",
+    "kat",
+    "katya"
+  ],
+  "author": "Seiko Eleanor",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "fs": "0.0.1-security",
+    "ytdl-core": "^0.20.2"
+  }
+}
