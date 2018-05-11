@@ -3,6 +3,9 @@ module.exports.run = async (client, message, args) => {
     // Define the member variable.
     let member = message.mentions.members.first();
 
+    // Send message while avatar is being processed.
+    message.channel.send(":clown:  |  Generating avatar...");
+
     if (!member){
 
         // Send the message author's avatar picture.
@@ -22,9 +25,6 @@ module.exports.run = async (client, message, args) => {
 
     // Send the message author's avatar picture.
     message.channel.send({files: [
-
-        // Send message while avatar is being processed.
-        message.channel.send(":clown:  |  Generating avatar...");
 
         {
             attachment: member.user.displayAvatarURL,
