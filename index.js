@@ -1,5 +1,7 @@
 // ------ SET UP ------ //
 
+
+
 // SET UP THE BOT
 const Discord = require('discord.js'); // Initialize Discord.
 const client = new Discord.Client(); // Initialize the bot.
@@ -20,7 +22,11 @@ client.on('ready', () => { // Condition: when the bot is online.
     client.user.setPresence({ game: { name: 'Miscat\'s videos', type: 0 } }); // Set the bot's status.
 });
 
+
+
 // ------ WELCOMING NEW MEMBERS ------ //
+
+
 
 // WELCOME MESSAGE AND EMBED
 client.on('guildMemberAdd', member => { // Condition: user joining the server.
@@ -61,7 +67,11 @@ client.on('guildMemberAdd', member => { // Condition: user joining the server.
       
 });
 
+
+
 // ------ MUSIC COMMANDS ------ //
+
+
 
 // SET UP THE MUSIC CLIENT.
 const music = new Music(client, {
@@ -77,7 +87,11 @@ const music = new Music(client, {
   
 });
 
+
+
 // ------ COMMANDS ------ //
+
+
 
 // READ THE ADMIN COMMANDS FOLDER
 fs.readdir('./cmd/admin', (err, files) => {
@@ -95,6 +109,29 @@ fs.readdir('./cmd/admin', (err, files) => {
     jsFiles.forEach((f, i) => {
   
       let props = require(`./cmd/admin/${f}`);
+      console.log(`${i + 1}: ${f} loaded.`);
+      client.commands.set(props.info.name, props);
+  
+    });
+  
+});
+
+// READ THE REGULAR COMMANDS FOLDER
+fs.readdir('./cmd/regular', (err, files) => {
+    if(err) console.error(err);
+  
+    // Filter .js files.
+    let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+    if(jsFiles.length <= 0) {
+      console.log('No commands to load.');
+      return;
+    }
+  
+    // Load the commands
+    console.log(`Loading ${jsFiles.length} regular commands.`);
+    jsFiles.forEach((f, i) => {
+  
+      let props = require(`./cmd/regular/${f}`);
       console.log(`${i + 1}: ${f} loaded.`);
       client.commands.set(props.info.name, props);
   
@@ -125,7 +162,11 @@ client.on("message", async message => {
  
 });
 
+
+
 // ------ BOT TOKEN ------ //
+
+
 
 // GET THE BOT'S TOKEN, DON'T CHANGE
 client.login(process.env.BOT_TOKEN);
