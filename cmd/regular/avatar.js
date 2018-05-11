@@ -18,9 +18,6 @@ module.exports.run = async (client, message, args) => {
 
         ]});
 
-        // Delete the inital message.
-        msg.delete()
-
         // Cancel the command.
         return;
 
