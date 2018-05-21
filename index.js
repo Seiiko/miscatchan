@@ -93,6 +93,29 @@ const music = new Music(client, {
 
 
 
+// READ THE OWNER COMMANDS FOLDER
+fs.readdir('./cmd/owner', (err, files) => {
+    if(err) console.error(err);
+  
+    // Filter .js files.
+    let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+    if(jsFiles.length <= 0) {
+      console.log('No commands to load.');
+      return;
+    }
+  
+    // Load the commands
+    console.log(`Loading ${jsFiles.length} owner commands.`);
+    jsFiles.forEach((f, i) => {
+  
+      let props = require(`./cmd/owner/${f}`);
+      console.log(`${i + 1}: ${f} loaded.`);
+      client.commands.set(props.info.name, props);
+  
+    });
+  
+});
+
 // READ THE ADMIN COMMANDS FOLDER
 fs.readdir('./cmd/admin', (err, files) => {
     if(err) console.error(err);
@@ -137,6 +160,29 @@ fs.readdir('./cmd/regular', (err, files) => {
   
     });
   
+});
+
+// READ THE INTERACTION COMMANDS FOLDER
+fs.readdir('./cmd/interaction', (err, files) => {
+  if(err) console.error(err);
+
+  // Filter .js files.
+  let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+  if(jsFiles.length <= 0) {
+    console.log('No commands to load.');
+    return;
+  }
+
+  // Load the commands
+  console.log(`Loading ${jsFiles.length} interaction commands.`);
+  jsFiles.forEach((f, i) => {
+
+    let props = require(`./cmd/interaction/${f}`);
+    console.log(`${i + 1}: ${f} loaded.`);
+    client.commands.set(props.info.name, props);
+
+  });
+
 });
 
 // COMMAND HANDLER

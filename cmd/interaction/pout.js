@@ -4,8 +4,8 @@ module.exports.run = async (client, message, args) => {
     let member = message.mentions.members.first();
 
     // Send the info message to the current channel.
-    message.channel.send(`:frowning:  |  <@!` + message.author.id + `> is pouting at <@!` + member.user.id + `>...`, {
-        file: "http://i.imgur.com/A3vDoIJ.gif"
+    message.channel.send(`:frowning:  |  <@!` + message.author.id + `> is pouting at <@!` + member.user.id + `>... Oh, now you've done goofed.`, {
+        file: "https://media1.tenor.com/images/58a26a738703565f7fc276aedabfcfb3/tenor.gif"
     });
 
 }

@@ -4,8 +4,8 @@ module.exports.run = async (client, message, args) => {
     let member = message.mentions.members.first();
 
     // Send the info message to the current channel.
-    message.channel.send(`:kissing_heart:  |  <@!` + member.user.id + `> and <@!` + message.author.id + `> are kissing!`, {
-        file: "https://media1.giphy.com/media/bGm9FuBCGg4SY/giphy.gif"
+    message.channel.send(`:kissing_heart:  |  <@!` + member.user.id + `> and <@!` + message.author.id + `> are kissing! Hehe, I think they need some privacy...`, {
+        file: "https://78.media.tumblr.com/3d93be7699a2ba8b4bc13a29a37b84ad/tumblr_odt2geMkpc1t86l7wo1_500.gif"
     });
 
 }

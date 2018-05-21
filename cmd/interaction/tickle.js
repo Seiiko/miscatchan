@@ -4,8 +4,8 @@ module.exports.run = async (client, message, args) => {
     let member = message.mentions.members.first();
 
     // Send the info message to the current channel.
-    message.channel.send(`:point_right:  | <@!` + member.user.id + `> is being tickled by <@!` + message.author.id + `>!`, {
-        file: "http://i0.kym-cdn.com/photos/images/original/000/948/122/f23.gif"
+    message.channel.send(`:point_right:  | <@!` + member.user.id + `> is being tickled by <@!` + message.author.id + `>! Now wait until they grow older. Hehe.`, {
+        file: "http://static.fjcdn.com/gifs/Pretty+much+anytime+i+get+tickled+i+dont+like+being_b9d6a7_5127494.gif"
     });
 
 }

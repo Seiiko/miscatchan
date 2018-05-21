@@ -4,8 +4,8 @@ module.exports.run = async (client, message, args) => {
     let member = message.mentions.members.first();
 
     // Send the info message to the current channel.
-    message.channel.send(`:baby:  |  <@!` + message.author.id + `> is cuddling with  <@!` + member.user.id + `>!`, {
-        file: "http://mrwgifs.com/wp-content/uploads/2013/04/Snuggling-Cuddling-Anime-Girls-Gif-.gif"
+    message.channel.send(`:baby:  |  <@!` + message.author.id + `> is cuddling with  <@!` + member.user.id + `>! Ain't that just adorable...`, {
+        file: "https://media.giphy.com/media/3bqtLDeiDtwhq/giphy.gif"
     });
 
 }

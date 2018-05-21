@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
     let member = message.mentions.members.first();
 
     // Send the info message to the current channel.
-    message.channel.send(`:shrug:  |  <@!` + message.author.id + `> is shrugging at  <@!` + member.user.id + `>!`, {
+    message.channel.send(`:shrug:  |  <@!` + message.author.id + `> is shrugging at  <@!` + member.user.id + `>. Woo. So exciting.`, {
         file: "https://media1.tenor.com/images/8e74b7dbfadfd639c35cfddf33252bbd/tenor.gif"
     });
 

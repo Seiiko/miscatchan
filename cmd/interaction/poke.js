@@ -4,8 +4,8 @@ module.exports.run = async (client, message, args) => {
     let member = message.mentions.members.first();
 
     // Send the info message to the current channel.
-    message.channel.send(`:point_left:  |  <@!` + member.user.id + `> has been poked by <@!` + message.author.id + `>!`, {
-        file: "https://78.media.tumblr.com/913f6c8b397a28cce5d739d9e5440f13/tumblr_on0ks5LR3P1ridyfoo1_500.gif"
+    message.channel.send(`:point_left:  |  <@!` + member.user.id + `> has been poked by <@!` + message.author.id + `>! Fufufu, children, please.`, {
+        file: "http://i0.kym-cdn.com/photos/images/original/001/027/698/3ef.gif"
     });
 
 }
