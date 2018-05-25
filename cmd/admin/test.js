@@ -3,6 +3,7 @@ module.exports.run = async (client, message, args) => {
     // Define the role variables.
     let owner = 'NSFW Goddess';
     let admin = 'Moderator';
+    const casualChat = client.channels.find('name', 'casual-chat'); // Create a variable referring to the selected channel.
 
     // Limit it to admins.
     if (!message.member.roles.some(r => [owner, admin].includes(r.name))) // If user doesn't have the Bot Owner or Admin role.
@@ -25,6 +26,7 @@ module.exports.run = async (client, message, args) => {
 
         message.channel.send('*Sent to Squad:*\n:zap:  |  **X has been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[0] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*');
         message.channel.send('*Sent to member:*\n:zap:  |  **You have been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[1] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*');
+        casualChat.send('Oops! Some testing is going on with me. Don\'t look at me, keep going.');
 
     } 
     

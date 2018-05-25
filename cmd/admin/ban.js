@@ -1,8 +1,9 @@
 module.exports.run = async (client, message, args) => {
 
-  // Define the member and reason variables.
+  // Define the member and reasons variables.
   let member = message.mentions.members.first();
-  let reason = args.slice(1).join(' ');
+  let reasons = args.slice(1).join(' ').split(' || ');
+  const casualChat = client.channels.find('name', 'casual-chat'); // Create a variable referring to the selected channel.
 
   // Define the role variables.
   let owner = 'NSFW Goddess';
@@ -27,9 +28,23 @@ module.exports.run = async (client, message, args) => {
   // Ban the member.
   await member.ban(reason)
     .catch(error => message.reply(`Sorry ${message.author}, I couldn't ban because of : ${error}`));
-  message.channel.send(`:zap:  |  <@!` + member.user.id + `> has been banned by <@!` + message.author.id + `>. \n:zap:  |  Reason: ${reason}`);
 
+  // Send message.
+  if (!reasons[0]) {
 
+    message.channel.send(':interrobang:  |  Please provide at least a public reason for the ban.')
+
+  } else if (!reasons[1]) {
+
+    casualChat.send(`:zap:  |  <@!` + member.user.id + `> has been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ${reasons[0]}\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*`);
+    message.member.send(':zap:  |  **You have been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[0] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*');
+
+  } else {
+
+    casualChat.send(`:zap:  |  <@!` + member.user.id + `> has been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ${reasons[0]}\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*` );
+    message.member.send('*Sent to member:*\n:zap:  |  **You have been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[1] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*');
+
+  } 
 
 }
 
