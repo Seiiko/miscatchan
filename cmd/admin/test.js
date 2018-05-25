@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     let reasons = args.slice(1).join(' ').split(' || ');
 
     // Send message.
-    if (!reasons) {
+    if (!reasons[0]) {
 
         message.channel.send(':interrobang:  |  Please provide at least a public reason for the ban.')
 
