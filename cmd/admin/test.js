@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
       return message.channel.send(':no_entry_sign:  |  You don\'t have enough permission to perform the m:test command!'); // Send a message to the channel.
 
     // Get the reasons 
-    let reasons = args.slice(1).join(' ').split('|');
+    let reasons = args.slice(1).join(' ').split(' | ');
 
     // Send message.
     message.channel.send('Public reason: ' + reasons[0] + '\nPrivate reason: ' + reasons[1]);
