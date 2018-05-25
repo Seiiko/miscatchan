@@ -34,16 +34,6 @@ module.exports.command = {
     slap: "Slap someone! Yikes...",
     tickle: "Tickle another member!",
 
-    // NSFW commands.
-    boobs: "Sends a random picture of naked breasts.",
-    butt: "Sends a random picture of a naked butt.",
-    e621: "Sends a random picture from e621.net, with the specified tags. Specify no tags for a random picture.",
-    gelbooru: "Sends a random picture from gelbooru.com, with the specified tags. Specify no tags for a random picture.",
-    hentai: "Sends a random Hentai picture, with the specified tags. Specify no tags for a random picture.",
-    konachan: "Sends a random picture of konachan.com, with the specified tags. Specify no tags for a random picture.",
-    rule34: "Sends a random picture of rule34.xxx, with the specified tags. Specify no tags for a random picture.",
-    vagina: "Sends a random picture of a naked vagina.",
-
     // Bot owner commands.
     bavatar: "[BOT OWNER ONLY] Changes the bot's avatar picture.",
     nick: "[BOT OWNER ONLY] Changes the bot's nickname.",

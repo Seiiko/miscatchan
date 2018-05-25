@@ -10,20 +10,20 @@ module.exports.run = async (client, message, args) => {
 
         const embedHelp = new Discord.RichEmbed()
   
-          .setTitle('Check out Sei\'s YouTube channel.')
-          .setAuthor('Nova   |   Help', 'https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png')
+          .setTitle('Check out what Miscat Squad has to offer!')
+          .setAuthor('Miscat-chan   |   Help', 'https://cdn.discordapp.com/attachments/403936228443029504/443458858703126528/miscat_chan_bot.png')
   
-          .setColor('#7d4586')
+          .setColor('#95dbdb')
           .setDescription('For help with a specific command, type \'.help [command]\'.')
   
-          .setFooter('Nova, the universal magic bot. Made by Sei.', 'https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png')
+          .setFooter('Miscat-chan, the Miscat Squad bot! Made by Sei.', 'https://cdn.discordapp.com/attachments/403936228443029504/443458858703126528/miscat_chan_bot.png')
   
-          .setURL('https://www.youtube.com/c/seiitunes')
+          .setURL('https://www.youtube.com/c/miscatsquad')
   
           .addBlankField(true)
   
           .addField('Regular Commands',
-          '.avatar   |   .help   |   .iam   |   .info   |   .ping   |   .report')
+          '.avatar   |   .help   |   .info   |   .ping   |   .report')
   
           .addBlankField(true)
   
@@ -41,11 +41,6 @@ module.exports.run = async (client, message, args) => {
           '.play   |   .stop   |   .pause   |   .resume   |   .skip   |   .volume   |   .queue   |   .clearqueue')
   
           .addBlankField(true)
-          
-          .addField('NSFW Commands',
-          '.boobs   |   .butt   |   .e621   |   .gelbooru   |   .hentai   |   .konachan   |   .rule34   |   .vagina')
-  
-          .addBlankField(true)
   
           .addField('Admin Commands',
           '.ban   |   .kick   |   .mute   |   .purge   |   .say   |   .unmute')
@@ -58,7 +53,7 @@ module.exports.run = async (client, message, args) => {
           .addBlankField(true)
   
         message.member.send(embedHelp);
-        message.channel.send(":white_check_mark:  |  A DM has been sent to you with all the help necessary!");
+        message.channel.send(':white_check_mark:  |  A DM has been sent to you with all the help necessary!');
 
     } else { // If a command was specified.
 
@@ -67,15 +62,15 @@ module.exports.run = async (client, message, args) => {
         let cUsage = usage.command[args[0]];
 
         if(cName == null)
-            return message.channel.send(':interrobang:  |  Please provide a valid command!\n:interrobang:  |  **Usage:** .help [command]');
+            return message.channel.send(':interrobang:  |  Please provide a valid command!\n:interrobang:  |  **Usage:** m:help [command]');
 
         const helpCommand = new Discord.RichEmbed()
   
-            .setAuthor("Nova   |   Help", "https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png")
+            .setAuthor('Miscat-chan   |   Help', 'https://cdn.discordapp.com/attachments/403936228443029504/443458858703126528/miscat_chan_bot.png')
     
-            .setColor("#7d4586")
+            .setColor('#95dbdb')
     
-            .setFooter("Nova, the universal magic bot. Made by Sei.", "https://cdn.discordapp.com/attachments/419222687525896202/422352880985440257/luminus_bot_stars.png")
+            .setFooter('Miscat-chan, the Miscat Squad bot! Made by Sei.', 'https://cdn.discordapp.com/attachments/403936228443029504/443458858703126528/miscat_chan_bot.png')
 
             .addBlankField(true)
     
@@ -84,13 +79,13 @@ module.exports.run = async (client, message, args) => {
 
             .addBlankField(true)
 
-            .addField("Usage:",
+            .addField('Usage:',
             cUsage)
             
             .addBlankField(true)
   
         message.member.send(helpCommand);
-        message.channel.send(":white_check_mark:  |  A DM has been sent to you with all the help necessary on the specified command!");
+        message.channel.send(':white_check_mark:  |  A DM has been sent to you with all the help necessary on the specified command!');
   
     }
     
@@ -99,7 +94,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.info = {
 
     // Set the command name.
-    name: "help"
+    name: 'help'
 
 }
 

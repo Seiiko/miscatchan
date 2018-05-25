@@ -35,34 +35,52 @@ client.on('guildMemberAdd', member => { // Condition: user joining the server.
     const welcomeChannel = client.channels.find('name', 'casual-chat'); // Create a variable referring to the selected channel.
     const embedCommands = new Discord.RichEmbed() // Create a constant referring to the embed message.
   
-      .setTitle('Check out what Miscat Squad has to offer!') // Embed title.
-      .setAuthor('Miscat-chan  |  Help',
-      'https://cdn.discordapp.com/attachments/404965687015243787/404966440626814986/miscat-chan.png') // Embed author.
+      .setTitle('Check out what Miscat Squad has to offer!')
+      .setAuthor('Miscat-chan   |   Help', 'https://cdn.discordapp.com/attachments/403936228443029504/443458858703126528/miscat_chan_bot.png')
   
-      .setColor('#95dbdb') // Embed color.
-      .setDescription('For help with a specific command, type ".help [command]".') // Embed description.
+      .setColor('#95dbdb')
+      .setDescription('For help with a specific command, type \'.help [command]\'.')
   
-      .setFooter('Miscat-chan, the Miscat Squad bot! Made by Sei.',
-      'https://cdn.discordapp.com/attachments/404965687015243787/404966440626814986/miscat-chan.png') // Embed footer.
+      .setFooter('Miscat-chan, the Miscat Squad bot! Made by Sei.', 'https://cdn.discordapp.com/attachments/403936228443029504/443458858703126528/miscat_chan_bot.png')
   
-      .setURL('https://www.youtube.com/c/miscatsquad') // Embed title url.
+      .setURL('https://www.youtube.com/c/miscatsquad')
+  
+      .addBlankField(true)
   
       .addField('Regular Commands',
-      '.help  |  .info  |  .katseries  |  .ping  |  .report') // Regular commands.
+      '.avatar   |   .help   |   .info   |   .ping   |   .report')
+  
+      .addBlankField(true)
   
       .addField('Fun Commands',
-      '.catfact  |  .coinflip  |  .dieroll  |  .dogfact  |  .katgif  |  .motiv  |  .potato  |  .puppy  |  .rate  |  .seisfave') // Regular commands.
+      '.catfact  |   .coinflip   |   .dieroll   |   .dogfact  |   .eball   |   .repeat   |   .motiv   |   .puppy   |   .rate')
+  
+      .addBlankField(true)
+  
+      .addField('Interaction Commands',
+      '.barf   |   .cuddle   |   .handhold   |   .hug   |   .kiss   |   .noticeme   |   .pat   |   .poke   |   .pout   |   .punch   |   .shrug   |   .slap   |   .tickle')
+  
+      .addBlankField(true)
+  
+      .addField('Music Commands',
+      '.play   |   .stop   |   .pause   |   .resume   |   .skip   |   .volume   |   .queue   |   .clearqueue')
+  
+      .addBlankField(true)
   
       .addField('Admin Commands',
-      '.ban  |  .kat  |  .kick  |  .mute  |  .purge  |  .say  |  .unmute') // Regular commands.
-
+      '.ban   |   .kick   |   .mute   |   .purge   |   .say   |   .unmute')
+  
+      .addBlankField(true)
+      
       .addField('Bot Owner Commands',
-      '.avatar  |  .nick  |  .status  |  .test  |  .utag') // Regular commands.
+      '.bavatar   |   .nick   |   .status   |   .utag')
+  
+      .addBlankField(true)
   
     // Sending the messages.
     welcomeChannel.send('<@!'+member.user.id+'>  |  **Fistbump! Welcome to the Squad!** :punch::boom:\nHope I didn\'t scare ya... Hehe. Be sure to introduce yourself in the #welcome-introductions channel to get the fun started! And if you need help the #support-group is open to you 24/7. Make yourself at home and embrace your inner fangirl and fanboy every single day!');
     member.send('**Welcome to the squad!** \nBe sure to introduce yourself in the #welcome-introductions channel to get the fun started! And if you need help the #support-group is open to you 24/7. Make yourself at home and embrace your inner fangirl and fanboy every single day!');
-    member.send(':white_check_mark: | Here\'s a list of all the commands of the bot! Write ".help [command name]" to get specific help with that command.');
+    member.send(':white_check_mark: | Here\'s a list of all the commands of the bot! Write "m:help [command name]" to get specific help with that command.');
     member.send(embedCommands);
       
 });
@@ -178,6 +196,29 @@ fs.readdir('./cmd/interaction', (err, files) => {
   jsFiles.forEach((f, i) => {
 
     let props = require(`./cmd/interaction/${f}`);
+    console.log(`${i + 1}: ${f} loaded.`);
+    client.commands.set(props.info.name, props);
+
+  });
+
+});
+
+// READ THE FUN COMMANDS FOLDER
+fs.readdir('./cmd/fun', (err, files) => {
+  if(err) console.error(err);
+
+  // Filter .js files.
+  let jsFiles = files.filter( f => f.split('.').pop() === 'js');
+  if(jsFiles.length <= 0) {
+    console.log('No commands to load.');
+    return;
+  }
+
+  // Load the commands
+  console.log(`Loading ${jsFiles.length} fun commands.`);
+  jsFiles.forEach((f, i) => {
+
+    let props = require(`./cmd/fun/${f}`);
     console.log(`${i + 1}: ${f} loaded.`);
     client.commands.set(props.info.name, props);
 
