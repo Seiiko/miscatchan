@@ -29,6 +29,8 @@ module.exports.run = async (client, message, args) => {
     .catch(error => message.reply(`Sorry ${message.author}, I couldn't ban because of : ${error}`));
   message.channel.send(`:zap:  |  <@!` + member.user.id + `> has been banned by <@!` + message.author.id + `>. \n:zap:  |  Reason: ${reason}`);
 
+
+
 }
 
 module.exports.info = {

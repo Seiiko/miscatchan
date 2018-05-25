@@ -6,22 +6,19 @@ module.exports.run = async (client, message, args) => {
 
     // Limit it to admins.
     if (!message.member.roles.some(r => [owner, admin].includes(r.name))) // If user doesn't have the Bot Owner or Admin role.
-      return message.channel.send(':no_entry_sign:  |  You don\'t have enough permission to perform the m:say command!'); // Send a message to the channel.
+      return message.channel.send(':no_entry_sign:  |  You don\'t have enough permission to perform the m:test command!'); // Send a message to the channel.
 
-    // Get the message 
-    const sayMessage = args.join(' ');
+    // Get the reasons 
+    let reasons = args.slice(1).join(' ').split('|');
 
-    // Delete the command message.
-    message.delete()
-
-    // Get the bot to say the message.
-    message.channel.send(sayMessage);
+    // Send message.
+    message.channel.send('Public reason: ' + reasons[0] + '\nPrivate reason: ' + reasons[1]);
 
 }
 
 module.exports.info = {
 
     // Set the command name.
-    name: 'say'
+    name: 'test'
 
 }

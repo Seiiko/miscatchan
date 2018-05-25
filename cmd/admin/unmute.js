@@ -10,11 +10,11 @@ module.exports.run = async (client, message, args) => {
 
   // Limit it to admins.
   if(!message.member.roles.some(r => [owner, admin].includes(r.name))) // If user doesn't have the Bot Owner or Admin role.
-    return message.channel.send(':no_entry_sign:  |  You don\'t have enough permission to perform the .mute command!'); // Sends a message to the channel.
+    return message.channel.send(':no_entry_sign:  |  You don\'t have enough permission to perform the m:unmute command!'); // Sends a message to the channel.
 
   // Get the member, return if there's none.
   if(!mutee)
-    return message.channel.send(':interrobang:  |  You did not specify a valid member! \n:interrobang:  |  **Usage:** .mute [member]');
+    return message.channel.send(':interrobang:  |  You did not specify a valid member! \n:interrobang:  |  **Usage:** m:unmute [member]');
 
   // If the member already has the muted role, send a warning message.
   if(!role || !mutee.roles.has(role.id))

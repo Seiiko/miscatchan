@@ -60,8 +60,8 @@ client.on('guildMemberAdd', member => { // Condition: user joining the server.
       '.avatar  |  .nick  |  .status  |  .test  |  .utag') // Regular commands.
   
     // Sending the messages.
-    welcomeChannel.send('<@!'+member.user.id+'>  |  **Fistbump! Welcome to the squad!** \nBe sure to introduce yourself in the #welcome-introductions channel to get the fun started! And if you need help the #support-group is open to you 24/7! Make yourself at home and embrace your inner fangirl and fanboy every single day!');
-    member.send('**Fistbump! Welcome to the squad!** \nBe sure to introduce yourself in the #welcome-introductions channel to get the fun started! And if you need help the #support-group is open to you 24/7! Make yourself at home and embrace your inner fangirl and fanboy every single day!');
+    welcomeChannel.send('<@!'+member.user.id+'>  |  **Fistbump! Welcome to the Squad!** :punch::boom:\nHope I didn\'t scare ya... Hehe. Be sure to introduce yourself in the #welcome-introductions channel to get the fun started! And if you need help the #support-group is open to you 24/7. Make yourself at home and embrace your inner fangirl and fanboy every single day!');
+    member.send('**Welcome to the squad!** \nBe sure to introduce yourself in the #welcome-introductions channel to get the fun started! And if you need help the #support-group is open to you 24/7. Make yourself at home and embrace your inner fangirl and fanboy every single day!');
     member.send(':white_check_mark: | Here\'s a list of all the commands of the bot! Write ".help [command name]" to get specific help with that command.');
     member.send(embedCommands);
       

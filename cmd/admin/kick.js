@@ -10,11 +10,11 @@ module.exports.run = async (client, message, args) => {
 
   // Limit it to admins.
   if (!message.member.roles.some(r => [owner, admin].includes(r.name))) // If user doesn't have the Bot Owner or Admin role.
-    return message.channel.send(':no_entry_sign:  |  You don\'t have enough permission to perform the .kick command!'); // Send message to the channel.
+    return message.channel.send(':no_entry_sign:  |  You don\'t have enough permission to perform the m:kick command!'); // Send message to the channel.
 
   // Check if the member exists.
   if (!member)
-    return message.channel.send(':interrobang:  |  This member doesn\'t exist! \n:interrobang:  |  **Usage:** .kick [member] [reason]'); // Send message to channel.
+    return message.channel.send(':interrobang:  |  This member doesn\'t exist! \n:interrobang:  |  **Usage:** m:kick [member] [reason]'); // Send message to channel.
 
   // Check if the member has a higher role than the bot.
   if (!member.kickable)
