@@ -12,8 +12,8 @@ module.exports.run = async (client, message, args) => {
     let reasons = args.slice(1).join(' ').split(' || ');
 
     // Send message.
-    message.channel.send('*Sent to Squad:*\n:zap:  |  X has been banned from the MiscatSquad server.\n:zap:  |  **Reason:** ' + reasons[0] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*');
-    message.channel.send('*Sent to member:*\n:zap:  |  You have been banned from the MiscatSquad server.\n:zap:  |  **Reason:** ' + reasons[1] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*');
+    message.channel.send('*Sent to Squad:*\n:zap:  |  **X has been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[0] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*');
+    message.channel.send('*Sent to member:*\n:zap:  |  **You have been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[1] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*');
 
 }
 
