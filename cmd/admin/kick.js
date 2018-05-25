@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
 
   // Check if a reason was provided.
   if (!reason)
-    return message.channel.send(':interrobang:  |  Please provide a valid reason for the kick. \n:question:  |  **Usage:** .kick [member] [reason]'); // Send message to channel.
+    return message.channel.send(':interrobang:  |  Please provide a valid reason for the kick. \n:question:  |  **Usage:** m:kick [member] [reason]'); // Send message to channel.
 
   // Kick the member.
   await member.kick(reason)

@@ -15,26 +15,22 @@ module.exports.run = async (client, message, args) => {
 
   // Check if the member exists.
   if (!member)
-    return message.channel.send(':interrobang:  |  This member doesn\'t exist! \n:interrobang:  |  **Usage:** .ban [member] [reason]'); // Send message to channel.
+    return message.channel.send(':interrobang:  |  This member doesn\'t exist! \n:interrobang:  |  **Usage:** .ban [member] [public reason] || [private reason]'); // Send message to channel.
 
   // Check if the member has a higher role than the bot.  
   if (!member.bannable)
     return message.channel.send(':no_entry_sign:  |  I cannot ban this user!'); // Send message to channel.
 
   // Check if a reason was provided.
-  if (!reason)
-    return message.channel.send(':interrobang:  |  Please provide a valid reason for the ban. \n:interrobang:  |  **Usage:** .ban [member] [reason]'); // Send message to channel.
+  if (!reasons [0])
+    return message.channel.send(':interrobang:  |  Please provide at least a public reason for the ban. \n:interrobang:  |  **Usage:** .ban [member] [public reason] || [private reason]'); // Send message to channel.
 
   // Ban the member.
-  await member.ban(reason)
-    .catch(error => message.reply(`Sorry ${message.author}, I couldn't ban because of : ${error}`));
+  await member.ban(reasons[1])
+    .catch(error => message.reply(`I "apologize", ${message.author}, I couldn't ban because of : ${error}\nHmph.`));
 
   // Send message.
-  if (!reasons[0]) {
-
-    message.channel.send(':interrobang:  |  Please provide at least a public reason for the ban.')
-
-  } else if (!reasons[1]) {
+  if (!reasons[1]) {
 
     casualChat.send(`:zap:  |  <@!` + member.user.id + `> has been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ${reasons[0]}\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*`);
     message.member.send(':zap:  |  **You have been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[0] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*');
