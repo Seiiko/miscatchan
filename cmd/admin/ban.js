@@ -32,13 +32,13 @@ module.exports.run = async (client, message, args) => {
   // Send message.
   if (!reasons[1]) {
 
-    casualChat.send(`:zap:  |  <@!` + member.user.id + `> has been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ${reasons[0]}\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*`);
-    message.member.send(':zap:  |  **You have been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[0] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form: https://form.jotformeu.com/81456911084357*');
+    casualChat.send(`:zap:  |  <@!` + member.user.id + `> **has been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ${reasons[0]}\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*`);
+    member.send(':zap:  |  **You have been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[0] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form: https://form.jotformeu.com/81456911084357*');
 
   } else {
 
-    casualChat.send(`:zap:  |  <@!` + member.user.id + `> has been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ${reasons[0]}\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*` );
-    message.member.send('*Sent to member:*\n:zap:  |  **You have been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[1] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form: https://form.jotformeu.com/81456911084357*');
+    casualChat.send(`:zap:  |  <@!` + member.user.id + `> **has been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ${reasons[0]}\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form.*` );
+    member.send('*Sent to member:*\n:zap:  |  **You have been banned from the MiscatSquad server.**\n:zap:  |  **Reason:** ' + reasons[1] + '\n:zap:  |  *Do not reply to this message or to the Mods. If you\'re unhappy with any decision taken by the Moderators, fill out our Complaints Form: https://form.jotformeu.com/81456911084357*');
 
   } 
 
