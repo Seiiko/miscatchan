@@ -22,6 +22,7 @@
     "dog-facts": "^1.0.3",
     "ffmpeg-binaries": "^4.0.0",
     "fs": "0.0.1-security",
+    "lzma-native": "^4.0.1",
     "motivational-quotes": "^1.1.0",
     "random-puppy": "^1.1.0",
     "ytdl-core": "^0.20.2"
