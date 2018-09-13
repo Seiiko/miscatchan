@@ -20,7 +20,6 @@
     "discord.js": "^11.3.2",
     "discord.js-musicbot-addon": "^10.1.5",
     "dog-facts": "^1.0.3",
-    "easy-ffmpeg": "0.0.15",
     "fs": "0.0.1-security",
     "motivational-quotes": "^1.1.0",
     "random-puppy": "^1.1.0",
