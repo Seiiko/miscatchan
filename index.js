@@ -32,7 +32,7 @@ client.on('ready', () => { // Condition: when the bot is online.
 client.on('guildMemberAdd', member => { // Condition: user joining the server.
     
     // Defining the variables.
-    const welcomeChannel = client.channels.find('name', 'casual-chat'); // Create a variable referring to the selected channel.
+    const welcomeChannel = client.channels.find('name', 'lounge'); // Create a variable referring to the selected channel.
     const embedCommands = new Discord.RichEmbed() // Create a constant referring to the embed message.
   
       .setTitle('Check out what Miscat Squad has to offer!')
@@ -63,7 +63,7 @@ client.on('guildMemberAdd', member => { // Condition: user joining the server.
       .addBlankField(true)
   
       .addField('Music Commands',
-      '.play   |   .stop   |   .pause   |   .resume   |   .skip   |   .volume   |   .queue   |   .clearqueue')
+      'm:mhelp   |   .play   |   .stop   |   .pause   |   .resume   |   .skip   |   .volume   |   .queue   |   .clearqueue')
   
       .addBlankField(true)
   
@@ -78,9 +78,9 @@ client.on('guildMemberAdd', member => { // Condition: user joining the server.
       .addBlankField(true)
   
     // Sending the messages.
-    welcomeChannel.send('<@!'+member.user.id+'>  |  **Fistbump! Welcome to the Squad!** :punch::boom:\nHope I didn\'t scare ya... Hehe. Be sure to introduce yourself in the #welcome-introductions channel to get the fun started! And if you need help the #support-group is open to you 24/7. Make yourself at home and embrace your inner fangirl and fanboy every single day!');
-    member.send('**Welcome to the squad!** \nBe sure to introduce yourself in the #welcome-introductions channel to get the fun started! And if you need help the #support-group is open to you 24/7. Make yourself at home and embrace your inner fangirl and fanboy every single day!');
-    member.send(':white_check_mark: | Here\'s a list of all the commands of the bot! Write "m:help [command name]" to get specific help with that command.');
+    welcomeChannel.send('<@!'+member.user.id+'>  |  **Fistbump! Welcome to the Squad!** :punch::boom:\nHope I didn\'t scare ya... Hehe. Be sure to introduce yourself in the #introductions channel to get the fun started! And if you need help the #support-group is open to you 24/7. Make yourself at home and embrace your inner fangirl and fanboy every single day!');
+    member.send('**Welcome to the squad!** \nBe sure to introduce yourself in the #introductions channel to get the fun started! \n\nAnd, if you need help, the #support-group is open to you 24/7. \nMake yourself at home and embrace your inner fangirl and fanboy every single day!');
+    member.send(':white_check_mark: | Here\'s a list of all the commands of the bot! Write "m:help [command name]" to get specific help for that command.');
     member.send(embedCommands);
       
 });
@@ -92,17 +92,17 @@ client.on('guildMemberAdd', member => { // Condition: user joining the server.
 
 
 // SET UP THE MUSIC CLIENT.
-const music = new Music(client, {
+const music = Music(client, {
   
-    youtubeKey: 'AIzaSyCom6F7OFxjJYHDNv6w_3Y2fP3CrTan9JU',
-    prefix: 'm:',
-    helpCmd: 'mhelp',
-    messageHelp: true,
-    botOwner: '380484645281595392',
-    ownerOverMember: true,
-    enableQueueStat: true,
-    logging: true
-  
+  youtubeKey: 'AIzaSyCom6F7OFxjJYHDNv6w_3Y2fP3CrTan9JU',
+  prefix: 'm:',
+  helpCmd: 'mhelp',
+  messageHelp: true,
+  botOwner: '380484645281595392',
+  ownerOverMember: true,
+  enableQueueStat: true,
+  logging: true
+
 });
 
 
