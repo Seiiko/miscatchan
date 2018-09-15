@@ -251,6 +251,42 @@ client.on("message", async message => {
 
 
 
+// ------ ANTI-COOKIE ------//
+
+
+
+client.on("message", async message => {
+
+  // Define variables.
+  let possibleDenial =
+  [":rolling_eyes:  |  You picked the wrong side on this war!", 
+  ":rolling_eyes:  |  No! Stop with the cookies, punk.", 
+  ":rolling_eyes:  |  Could you not use that Emoji? Gosh, makes me sick.", 
+  ":rolling_eyes:  |  Poor soul, using cookies on the war...", 
+  ":rolling_eyes:  |  I guess some people don't understand how weak cookies are. Oh, well!", 
+  ":rolling_eyes:  |  Aw, that's adorable! You think cookies will win?", 
+  ":rolling_eyes:  |  I wouldn't count on cookies to win anything. That's just dumb!", 
+  ":rolling_eyes:  |  Rafa told me to stop you guys from using cookies. So... stop, yea?",
+  ":rolling_eyes:  |  All I see is weakness here. Bah. Disgusting Emoji.",
+  ":rolling_eyes:  |  :cookie:? More like :disgusting:!",
+  ":rolling_eyes:  |  I'm gonna say this in a way you'll maybe understand. Cookies = not good! Got me?",
+  ":rolling_eyes:  |  Ignorance fills this chatroom. It's so dense you can cut it with a knife. Like what I do to cookies.",
+  ":rolling_eyes:  |  C-O-O-K-I-E-S. Hm! Spells weak.", 
+  ":rolling_eyes:  |  Hahaha! Again with the cookies. Damn, you're in denial."]; // Possible answers.
+
+  let denial = possibleDenial[Math.floor(Math.random() * possibleDenial.length)]; // Variable which stores the random answer.
+
+  if (message.content.includes(':cookie:')){   
+
+    // Send the message
+    message.channel.send(":8ball:  |  " + denial);
+
+  }
+
+});
+
+
+
 // ------ BOT TOKEN ------ //
 
 
