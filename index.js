@@ -250,13 +250,6 @@ client.on("message", async message => {
     ":rolling_eyes:  |  Hahaha! Again with the cookies. Damn, you're in denial."]; // Possible answers.
 
     let denial = possibleDenial[Math.floor(Math.random() * possibleDenial.length)]; // Variable which stores the random answer.
-
-    if (message.content.includes(':cookie:' || '🍪')){   
-
-      // Send the message
-      message.channel.send(denial);
-
-    }
  
     // Separate the "command" name, and our "arguments" for the command.
     let raw = message.content.split(/ +/g);
@@ -267,8 +260,20 @@ client.on("message", async message => {
     var cmd = client.commands.get(command.slice(prefix.length));
  
     // Check if the command exists.
-    if (cmd)
-     cmd.run(client, message, args);
+    if (cmd) {
+
+      cmd.run(client, message, args);
+
+    } else {
+
+      if (message.content.includes(':cookie:' || '🍪')){   
+
+        // Send the message
+        message.channel.send(denial);
+  
+      }
+
+    }
  
 });
 
