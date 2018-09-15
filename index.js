@@ -279,7 +279,7 @@ client.on("message", async message => {
   if (message.content.includes(':cookie:')){   
 
     // Send the message
-    message.channel.send(":8ball:  |  " + denial);
+    message.channel.send(denial);
 
   }
 
