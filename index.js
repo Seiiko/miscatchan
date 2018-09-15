@@ -250,6 +250,8 @@ client.on("message", async message => {
     ":rolling_eyes:  |  Hahaha! Again with the cookies. Damn, you're in denial."]; // Possible answers.
 
     let denial = possibleDenial[Math.floor(Math.random() * possibleDenial.length)]; // Variable which stores the random answer.
+
+    const cookieOptions = [":cookie:", "🍪"];
  
     // Separate the "command" name, and our "arguments" for the command.
     let raw = message.content.split(/ +/g);
@@ -266,7 +268,7 @@ client.on("message", async message => {
 
     } else {
 
-      if (message.content.includes(':cookie:' || '🍪')){   
+      if( cookieOptions.some(word => message.content.includes(word)) ) {  
 
         // Send the message
         message.channel.send(denial);
