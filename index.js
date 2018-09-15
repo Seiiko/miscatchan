@@ -251,7 +251,7 @@ client.on("message", async message => {
 
     let denial = possibleDenial[Math.floor(Math.random() * possibleDenial.length)]; // Variable which stores the random answer.
 
-    if (message.content.includes(':cookie:')){   
+    if (message.content.includes(':cookie:' || '🍪')){   
 
       // Send the message
       message.channel.send(denial);
